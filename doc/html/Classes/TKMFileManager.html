@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>TKMFileManager Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">TKMFileManager </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Tom Metzger</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/documentsDirectory">documentsDirectory</option>
+		
+		<option value="//api/name/mainBundleDirectory">mainBundleDirectory</option>
+		
+	</optgroup>
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/copyDirectory:toDirectory:">- copyDirectory:toDirectory:</option>
+		
+		<option value="//api/name/copyFile:toDirectory:">- copyFile:toDirectory:</option>
+		
+		<option value="//api/name/createDirectory:">- createDirectory:</option>
+		
+		<option value="//api/name/createSubdirectory:inDirectory:">- createSubdirectory:inDirectory:</option>
+		
+		<option value="//api/name/deleteDirectory:">- deleteDirectory:</option>
+		
+		<option value="//api/name/deleteFile:">- deleteFile:</option>
+		
+		<option value="//api/name/findAndCopyFile:toDirectory:">- findAndCopyFile:toDirectory:</option>
+		
+		<option value="//api/name/findAndDeleteFile:">- findAndDeleteFile:</option>
+		
+		<option value="//api/name/findAndGetFile:">- findAndGetFile:</option>
+		
+		<option value="//api/name/findAndMoveFile:toDirectory:">- findAndMoveFile:toDirectory:</option>
+		
+		<option value="//api/name/getFile:inDirectory:">- getFile:inDirectory:</option>
+		
+		<option value="//api/name/init">- init</option>
+		
+		<option value="//api/name/moveDirectory:toDirectory:">- moveDirectory:toDirectory:</option>
+		
+		<option value="//api/name/moveFile:toDirectory:">- moveFile:toDirectory:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">TKMFileManager Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>TKMFileManager.h<br />TKMFileManager.m</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>@class TKFileManager</p><p>This class was developed to make file management in iOS easier, and with less lines of code.</p>
+
+<p>@superclass SuperClass: NSObject</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/documentsDirectory" title="documentsDirectory"></a>
+	<h3 class="method-title"><code><a href="#//api/name/documentsDirectory">&nbsp;&nbsp;documentsDirectory</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This readonly property holds the string path of the app&rsquo;s Documents Directory.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) NSString *documentsDirectory</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TKMFileManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/mainBundleDirectory" title="mainBundleDirectory"></a>
+	<h3 class="method-title"><code><a href="#//api/name/mainBundleDirectory">&nbsp;&nbsp;mainBundleDirectory</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>This readonly property holds the string path of the directory of the app&rsquo;s Main Bundle.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) NSString *mainBundleDirectory</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TKMFileManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/init" title="init"></a>
+	<h3 class="method-title"><code><a href="#//api/name/init">&ndash;&nbsp;init</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Initializes the <code>TKMFileManager</code> object.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (id)init</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>id - After initializing the paths, it returns itself.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Assigns the correct paths to <a href="#//api/name/documentsDirectory"><code>documentsDirectory</code></a> and <a href="#//api/name/mainBundleDirectory"><code>mainBundleDirectory</code></a>. Then it returns itself as the <code>TKMFileManager</code> object.</p>
+
+<pre><code>TKMFileManager *manager = [[TKMFileManager alloc] init];
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TKMFileManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/createDirectory:" title="createDirectory:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/createDirectory:">&ndash;&nbsp;createDirectory:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a new directory at <code>newDirectoryPath</code>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)createDirectory:(NSString *)<em>newDirectoryPath</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>newDirectoryPath</code></th>
+						<td><p>The full path for the directory you wish to create.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>void - there isn&rsquo;t anything to return.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Creates a new directory at <code>newDirectoryPath</code>, if it doesn&rsquo;t already exist.</p>
+
+<pre><code>NSString *newDirectory = [manager.documentsDirectory stringByAppendingPathComponent:@"NewDirectory"]];  
+[manager createDirectory:newDirectory];
+</code></pre><div class="warning"><p><strong>Warning:</strong> The path must be a valid path that is accessible in the app&rsquo;s sandbox.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TKMFileManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/createSubdirectory:inDirectory:" title="createSubdirectory:inDirectory:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/createSubdirectory:inDirectory:">&ndash;&nbsp;createSubdirectory:inDirectory:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Creates a subdirectory named <code>subdirectoryName</code> in <code>directoryPath</code>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)createSubdirectory:(NSString *)<em>subdirectoryName</em> inDirectory:(NSString *)<em>directoryPath</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>subdirectoryName</code></th>
+						<td><p>The name of the subdirectory you wish to create.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>directoryPath</code></th>
+						<td><p>The path of the directory in which you wish to make a subdirectory.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>void - there isn&rsquo;t anything to return.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Creates a new directory at <code>subdirectoryName</code>, if it doesn&rsquo;t already exist.</p>
+
+<pre><code>NSString *subdirectory = @"/SubDirectory";  
+[manager createSubdirectory:subdirectory inDirectory:manager.documentsDirectory];
+</code></pre><div class="warning"><p><strong>Warning:</strong> If <code>subdirectoryName</code> does not contain &ldquo;/&rdquo; at the beginning, it will automatically be added.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TKMFileManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/copyDirectory:toDirectory:" title="copyDirectory:toDirectory:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/copyDirectory:toDirectory:">&ndash;&nbsp;copyDirectory:toDirectory:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Copies the contents of one directory into another.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)copyDirectory:(NSString *)<em>directoryPath</em> toDirectory:(NSString *)<em>destinationDirectoryPath</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>directoryPath</code></th>
+						<td><p>The path of the directory who&rsquo;s contents you&rsquo;d like to copy.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>destinationDirectoryPath</code></th>
+						<td><p>The path of the directory into which you&rsquo;d like the contents of <code>directoryPath</code> to be copied.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>void - there isn&rsquo;t anything to return.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Copies the contents of <code>directoryPath</code> into <code>destinationDirectoryPath</code>.</p>
+
+<pre><code>[manager copyDirectory:manager.mainBundleDirectory toDirectory:manager.documentsDirectory];
+</code></pre><div class="warning"><p><strong>Warning:</strong> It does <b>not</b> create a new directory for the files to be copied into.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TKMFileManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/moveDirectory:toDirectory:" title="moveDirectory:toDirectory:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/moveDirectory:toDirectory:">&ndash;&nbsp;moveDirectory:toDirectory:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Moves the contents of one directory into another.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)moveDirectory:(NSString *)<em>directoryPath</em> toDirectory:(NSString *)<em>destinationDirectoryPath</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>directoryPath</code></th>
+						<td><p>The path of the directory who&rsquo;s contents you&rsquo;d like to move.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>destinationDirectoryPath</code></th>
+						<td><p>The path of the directory into which you&rsquo;d like the contents of <code>directoryPath</code> to be moved.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>void - there isn&rsquo;t anything to return.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Moves the contents of <code>directoryPath</code> into <code>destinationDirectoryPath</code>.</p>
+
+<pre><code>[manager moveDirectory:manager.mainBundleDirectory toDirectory:mainBundleInDocuments];
+</code></pre><div class="warning"><p><strong>Warning:</strong> It does <b>not</b> create a new directory for the files to be moved into. Also, it is not recommended to move the contents of the Main Bundle into the Documents Directory.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TKMFileManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/deleteDirectory:" title="deleteDirectory:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/deleteDirectory:">&ndash;&nbsp;deleteDirectory:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Deletes a directory and its contents.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)deleteDirectory:(NSString *)<em>directoryPath</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>directoryPath</code></th>
+						<td><p>The path of the directory you&rsquo;d like to delete.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>void - there isn&rsquo;t anything to return.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Deletes a directory and its contents.</p>
+
+<pre><code>[manager deleteDirectory:manager.documentsDirectory];
+</code></pre><div class="warning"><p><strong>Warning:</strong> Deleting the Main Bundle directory or the Documents Directory is not recommended.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TKMFileManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getFile:inDirectory:" title="getFile:inDirectory:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getFile:inDirectory:">&ndash;&nbsp;getFile:inDirectory:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the filepath of a file located in the desired directory.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)getFile:(NSString *)<em>filename</em> inDirectory:(NSString *)<em>directoryPath</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>filename</code></th>
+						<td><p>The name of the file who&rsquo;s full path you&rsquo;d like to retrieve.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>directoryPath</code></th>
+						<td><p>The path of the directory which contains the file <code>filename</code>.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>NSString - An NSString containing the path to the desired file.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns the filepath of a file named <code>filename</code> located in the directory <code>directoryPath</code>.</p>
+
+<pre><code>NSString *exampleFilePath = [manager getFile:@"example.png" inDirectory:manager.documentsDirectory];
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TKMFileManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/findAndGetFile:" title="findAndGetFile:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/findAndGetFile:">&ndash;&nbsp;findAndGetFile:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns the filepath of a file located in an unknown directory.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)findAndGetFile:(NSString *)<em>filename</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>filename</code></th>
+						<td><p>The name of the file you&rsquo;d like to retrieve the path of, but don&rsquo;t know the directory of.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>NSString - An NSString containing the path to the desired file.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Recursively searches all available directories in the app&rsquo;s sandbox and returns the path to the first instance of a file named <code>filename</code>.</p>
+
+<pre><code>NSString *exampleFilePath = [manager findAndGetFile:@"example.png"];
+</code></pre><div class="warning"><p><strong>Warning:</strong> For use when the directory the desired file is located in is not known.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TKMFileManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/copyFile:toDirectory:" title="copyFile:toDirectory:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/copyFile:toDirectory:">&ndash;&nbsp;copyFile:toDirectory:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Copies a file to a specified directory.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)copyFile:(NSString *)<em>filePath</em> toDirectory:(NSString *)<em>destinationDirectoryPath</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>filePath</code></th>
+						<td><p>The path of the file you&rsquo;d like to copy.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>destinationDirectoryPath</code></th>
+						<td><p>The path of the directory into which you&rsquo;d like the file to be copied.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>void - there isn&rsquo;t anything to return.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Copies a file with the path <code>filePath</code> to a directory with the path <code>directoryPath</code>. If <code>directoryPath</code> doesn&rsquo;t exist, it is created.</p>
+
+<pre><code>NSString *exampleFilePath = [manager.mainBundleDirectory stringByAppendingPathComponent:@"example.txt"];  
+[manager copyFile:exampleFilePath toDirectory:manager.documentsDirectory];
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TKMFileManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/findAndCopyFile:toDirectory:" title="findAndCopyFile:toDirectory:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/findAndCopyFile:toDirectory:">&ndash;&nbsp;findAndCopyFile:toDirectory:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Finds, then copies a file to a specified directory.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)findAndCopyFile:(NSString *)<em>filename</em> toDirectory:(NSString *)<em>destinationDirectoryPath</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>filename</code></th>
+						<td><p>The name of the file you&rsquo;d like to find and copy.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>destinationDirectoryPath</code></th>
+						<td><p>The path of the directory into which you&rsquo;d like the file to be copied, once found.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>void - there isn&rsquo;t anything to return.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Recursively searches all available directories for a file named <code>filename</code>, then copies the first found instance to a directory with the path <code>directoryPath</code>. If <code>directoryPath</code> doesn&rsquo;t exist, it is created.</p>
+
+<pre><code>[manager findAndCopyFile:@"example.txt" toDirectory:manager.documentsDirectory];
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TKMFileManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/moveFile:toDirectory:" title="moveFile:toDirectory:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/moveFile:toDirectory:">&ndash;&nbsp;moveFile:toDirectory:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Moves a file to a specified directory.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)moveFile:(NSString *)<em>filePath</em> toDirectory:(NSString *)<em>destinationDirectoryPath</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>filePath</code></th>
+						<td><p>The path of the file you&rsquo;d like to move.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>destinationDirectoryPath</code></th>
+						<td><p>The path of the directory into which you&rsquo;d like the file to be moved.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>void - there isn&rsquo;t anything to return.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Moves a file with the path <code>filePath</code> to a directory with the path <code>directoryPath</code>. If <code>directoryPath</code> doesn&rsquo;t exist, it is created.</p>
+
+<pre><code>NSString *exampleFilePath = [manager.mainBundleDirectory stringByAppendingPathComponent:@"example.txt"];  
+[manager moveFile:exampleFilePath toDirectory:manager.documentsDirectory];
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TKMFileManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/findAndMoveFile:toDirectory:" title="findAndMoveFile:toDirectory:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/findAndMoveFile:toDirectory:">&ndash;&nbsp;findAndMoveFile:toDirectory:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Finds, then moves a file to a specified directory.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)findAndMoveFile:(NSString *)<em>filename</em> toDirectory:(NSString *)<em>destinationDirectoryPath</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>filename</code></th>
+						<td><p>The name of the file you&rsquo;d like to find and move.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>destinationDirectoryPath</code></th>
+						<td><p>The path of the directory into which you&rsquo;d like the file to be moved, once found.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>void - there isn&rsquo;t anything to return.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Recursively searches all available directories for a file named <code>filename</code>, then moves the first found instance to a directory with the path <code>directoryPath</code>. If <code>directoryPath</code> doesn&rsquo;t exist, it is created.</p>
+
+<pre><code>[manager findAndMoveFile:@"example.txt" toDirectory:manager.documentsDirectory];
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TKMFileManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/deleteFile:" title="deleteFile:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/deleteFile:">&ndash;&nbsp;deleteFile:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Deletes the file located at <code>filePath</code>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)deleteFile:(NSString *)<em>filePath</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>filePath</code></th>
+						<td><p>The path of the file you&rsquo;d like to delete.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>void - there isn&rsquo;t anything to return.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Deletes the file located at <code>filePath</code>.</p>
+
+<pre><code>NSString *exampleFilePath = [manager.mainBundleDirectory stringByAppendingPathComponent:@"example.txt"];  
+[manager deleteFile:exampleFilePath];
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TKMFileManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/findAndDeleteFile:" title="findAndDeleteFile:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/findAndDeleteFile:">&ndash;&nbsp;findAndDeleteFile:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Finds, then deletes a file named <code>filename</code>.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)findAndDeleteFile:(NSString *)<em>filename</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>filename</code></th>
+						<td><p>The name of the file you&rsquo;d like to delete, once found.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>void - there isn&rsquo;t anything to return.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Recursively searches all available directories for a file named <code>filename</code>, then deletes the first found instance.</p>
+
+<pre><code>[manager findAndDeleteFile:@"example.txt"];
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">TKMFileManager.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2016 Tom Metzger. All rights reserved. Updated: 2016-08-10</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

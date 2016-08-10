@@ -1,6 +1,6 @@
 //
 //  TKMFileManager.m
-//  TKMFileManager
+//  Revera
 //
 //  Created by Tom Metzger on 8/8/16.
 //  Copyright © 2016 Tom Metzger. All rights reserved.
@@ -20,13 +20,17 @@
 
 
 
-- (void)init
+- (id)init
 {
 	paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	_documentsDirectory = [paths objectAtIndex:0];
 	
 	
 	_mainBundleDirectory = [[NSBundle mainBundle] resourcePath];
+	
+	
+	
+	return self;
 }
 
 
@@ -35,7 +39,7 @@
 - (void)createDirectory:(NSString *)newDirectoryPath
 {
 	NSError *error;
-
+	
 	
 	if (![[NSFileManager defaultManager] fileExistsAtPath:newDirectoryPath isDirectory:YES])
 	{
@@ -101,21 +105,21 @@
 	if ([files count] > 0)
 	{
 		/*for (int i = 0; i < [files count]; i++)
-		{
+		 {
 			NSString *filePath = [directoryPath stringByAppendingString:[@"/" stringByAppendingString:files[i]]];
 			NSString *newPathForFile = [destinationDirectoryPath stringByAppendingString:[@"/" stringByAppendingString:files[i]]];
 			
 			if (![[NSFileManager defaultManager] fileExistsAtPath:newPathForFile])
 			{
-				NSLog(@"Copying File: '%@' \nTo Directory: '%@'", filePath, destinationDirectoryPath);
-				[[NSFileManager defaultManager] copyItemAtPath:filePath toPath:newPathForFile error:&error];
+		 NSLog(@"Copying File: '%@' \nTo Directory: '%@'", filePath, destinationDirectoryPath);
+		 [[NSFileManager defaultManager] copyItemAtPath:filePath toPath:newPathForFile error:&error];
 			}
 			else
 			{
-				NSLog(@"ERROR: Could Not Copy File: '%@'\nTo Directory: '%@'", filePath, destinationDirectoryPath);
-				NSLog(@"    RESULTING ERROR: %@", [error localizedDescription]);
+		 NSLog(@"ERROR: Could Not Copy File: '%@'\nTo Directory: '%@'", filePath, destinationDirectoryPath);
+		 NSLog(@"    RESULTING ERROR: %@", [error localizedDescription]);
 			}
-		}*/
+		 }*/
 		
 		NSError *copyError = nil;
 		if (![[NSFileManager defaultManager] copyItemAtPath:directoryPath toPath:destinationDirectoryPath error:&copyError])
@@ -263,18 +267,7 @@
 	NSArray *keys = [NSArray arrayWithObject:NSURLIsDirectoryKey];
 	
 	NSDirectoryEnumerator *documentsEnumerator = [fileManager
-										 enumeratorAtURL:documentsDirectoryURL
-										 includingPropertiesForKeys:keys
-										 options:0
-										 errorHandler:^(NSURL *url, NSError *error)
-										 {
-											 // Handle the error.
-											 // Return YES if the enumeration should continue after the error.
-											 return YES;
-										 }];
-	
-	NSDirectoryEnumerator *mainBundleEnumerator = [fileManager
-												  enumeratorAtURL:mainBundleDirectoryURL
+												  enumeratorAtURL:documentsDirectoryURL
 												  includingPropertiesForKeys:keys
 												  options:0
 												  errorHandler:^(NSURL *url, NSError *error)
@@ -283,6 +276,17 @@
 													  // Return YES if the enumeration should continue after the error.
 													  return YES;
 												  }];
+	
+	NSDirectoryEnumerator *mainBundleEnumerator = [fileManager
+												   enumeratorAtURL:mainBundleDirectoryURL
+												   includingPropertiesForKeys:keys
+												   options:0
+												   errorHandler:^(NSURL *url, NSError *error)
+												   {
+													   // Handle the error.
+													   // Return YES if the enumeration should continue after the error.
+													   return YES;
+												   }];
 	
 	
 	NSLog(@"Searching Documents Directory For File: '%@'", filename);
@@ -450,7 +454,7 @@
 	{
 		NSLog(@"ERROR: No File To Delete");
 	}
-
+	
 }
 
 @end
