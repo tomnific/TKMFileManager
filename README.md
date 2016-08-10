@@ -186,7 +186,7 @@ Attribution is technically required by the MIT License - plus, I enjoy being abl
 
 
 
-## Does Your Project US TKMFileManager? 
+## Does Your Project Use TKMFileManager? 
 If you've got an awesome project that uses TKMFileManager, contact me (info below) and I'll be sure to add your project to the list!
 
 
