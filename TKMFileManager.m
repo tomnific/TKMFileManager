@@ -41,7 +41,7 @@
 	NSError *error;
 	
 	
-	if (![[NSFileManager defaultManager] fileExistsAtPath:newDirectoryPath isDirectory:YES])
+	if (![[NSFileManager defaultManager] fileExistsAtPath:newDirectoryPath])
 	{
 		NSLog(@"Creating Directory: '%@'", newDirectoryPath);
 		[[NSFileManager defaultManager] createDirectoryAtPath:newDirectoryPath withIntermediateDirectories:NO attributes:nil error:&error];
@@ -49,7 +49,8 @@
 	else
 	{
 		NSLog(@"ERROR: Could Not Create Directory '%@'", newDirectoryPath);
-		NSLog(@"    RESULTING ERROR: %@", error);
+		NSLog(@"    MOST LIKELY REASON: Directory Already Exists");
+		NSLog(@"       RESULTING ERROR: %@", error);
 	}
 }
 
@@ -72,7 +73,7 @@
 	
 	NSString *newDirectoryPath = [_documentsDirectory stringByAppendingPathComponent:correctedSubdirectoryName];
 	
-	if (![[NSFileManager defaultManager] fileExistsAtPath:newDirectoryPath isDirectory:YES])
+	if (![[NSFileManager defaultManager] fileExistsAtPath:newDirectoryPath])
 	{
 		NSLog(@"Creating Directory: '%@'", newDirectoryPath);
 		[[NSFileManager defaultManager] createDirectoryAtPath:newDirectoryPath withIntermediateDirectories:NO attributes:nil error:&error];
@@ -80,7 +81,8 @@
 	else
 	{
 		NSLog(@"ERROR: Could Not Create Directory '%@'", newDirectoryPath);
-		NSLog(@"    RESULTING ERROR: %@", error);
+		NSLog(@"    MOST LIKELY REASON: Directory Already Exists");
+		NSLog(@"       RESULTING ERROR: %@", error);
 	}
 }
 
@@ -94,10 +96,10 @@
 	
 	
 	
-	if ([[NSFileManager defaultManager] fileExistsAtPath:destinationDirectoryPath isDirectory:YES])
-	{
-		[[NSFileManager defaultManager] removeItemAtPath:destinationDirectoryPath error:&error];
-	}
+	//	if ([[NSFileManager defaultManager] fileExistsAtPath:destinationDirectoryPath])
+	//	{
+	//		[[NSFileManager defaultManager] removeItemAtPath:destinationDirectoryPath error:&error];
+	//	}
 	
 	
 	NSLog(@"Copying Contents Of Directory: '%@'\nTo Directory: '%@'", directoryPath, destinationDirectoryPath);
@@ -144,7 +146,7 @@
 	
 	
 	
-	if ([[NSFileManager defaultManager] fileExistsAtPath:destinationDirectoryPath isDirectory:YES])
+	if ([[NSFileManager defaultManager] fileExistsAtPath:destinationDirectoryPath ])
 	{
 		[[NSFileManager defaultManager] removeItemAtPath:destinationDirectoryPath error:&error];
 	}
@@ -191,7 +193,7 @@
 {
 	NSLog(@"Deleting Directory: '%@'", directoryPath);
 	
-	if ([[NSFileManager defaultManager] fileExistsAtPath:directoryPath isDirectory:YES])
+	if ([[NSFileManager defaultManager] fileExistsAtPath:directoryPath ])
 	{
 		[[NSFileManager defaultManager] removeItemAtPath:directoryPath error:nil];
 	}
@@ -207,7 +209,7 @@
 {
 	BOOL fileFound = false;
 	NSFileManager *fileManager = [NSFileManager defaultManager];
-	NSURL *directoryURL = [NSURL fileURLWithPath:directoryPath isDirectory:YES]; // URL pointing to the directory you want to browse
+	NSURL *directoryURL = [NSURL fileURLWithPath:directoryPath ]; // URL pointing to the directory you want to browse
 	NSArray *keys = [NSArray arrayWithObject:NSURLIsDirectoryKey];
 	
 	NSDirectoryEnumerator *enumerator = [fileManager
@@ -262,8 +264,8 @@
 {
 	BOOL fileFound = false;
 	NSFileManager *fileManager = [NSFileManager defaultManager];
-	NSURL *documentsDirectoryURL = [NSURL fileURLWithPath:_documentsDirectory isDirectory:YES]; // URL pointing to the directory you want to browse
-	NSURL *mainBundleDirectoryURL = [NSURL fileURLWithPath:_mainBundleDirectory isDirectory:YES];
+	NSURL *documentsDirectoryURL = [NSURL fileURLWithPath:_documentsDirectory ]; // URL pointing to the directory you want to browse
+	NSURL *mainBundleDirectoryURL = [NSURL fileURLWithPath:_mainBundleDirectory ];
 	NSArray *keys = [NSArray arrayWithObject:NSURLIsDirectoryKey];
 	
 	NSDirectoryEnumerator *documentsEnumerator = [fileManager
@@ -350,6 +352,11 @@
 {
 	NSLog(@"Copying File: '%@'\nTo Directory: '%@'", filePath, destinationDirectoryPath);
 	
+	if (![[NSFileManager defaultManager] fileExistsAtPath:destinationDirectoryPath])
+	{
+		[self createDirectory:destinationDirectoryPath];
+	}
+	
 	if ([[NSFileManager defaultManager] isReadableFileAtPath:filePath])
 	{
 		[[NSFileManager defaultManager] copyItemAtURL:[NSURL fileURLWithPath:filePath] toURL:[NSURL fileURLWithPath:[destinationDirectoryPath stringByAppendingString:[@"/" stringByAppendingString:[filePath lastPathComponent]]]] error:nil];
@@ -370,6 +377,11 @@
 	
 	NSLog(@"Copying File: '%@'\nTo Directory: '%@'", pathOfFile, destinationDirectoryPath);
 	
+	if (![[NSFileManager defaultManager] fileExistsAtPath:destinationDirectoryPath])
+	{
+		[self createDirectory:destinationDirectoryPath];
+	}
+	
 	if ([[NSFileManager defaultManager] isReadableFileAtPath:pathOfFile])
 	{
 		[[NSFileManager defaultManager] copyItemAtURL:[NSURL fileURLWithPath:pathOfFile] toURL:[NSURL fileURLWithPath:[destinationDirectoryPath stringByAppendingString:[@"/" stringByAppendingString:[pathOfFile lastPathComponent]]]] error:nil];
@@ -386,6 +398,11 @@
 - (void)moveFile:(NSString *)filePath toDirectory:(NSString *)destinationDirectoryPath
 {
 	NSLog(@"Moving File: '%@'\nTo Directory: '%@'", filePath, destinationDirectoryPath);
+	
+	if (![[NSFileManager defaultManager] fileExistsAtPath:destinationDirectoryPath])
+	{
+		[self createDirectory:destinationDirectoryPath];
+	}
 	
 	if ([[NSFileManager defaultManager] isReadableFileAtPath:filePath])
 	{
@@ -407,6 +424,11 @@
 	
 	
 	NSLog(@"Moving File: '%@'\nTo Directory: '%@'", pathOfFile, destinationDirectoryPath);
+	
+	if (![[NSFileManager defaultManager] fileExistsAtPath:destinationDirectoryPath])
+	{
+		[self createDirectory:destinationDirectoryPath];
+	}
 	
 	if ([[NSFileManager defaultManager] isReadableFileAtPath:pathOfFile])
 	{

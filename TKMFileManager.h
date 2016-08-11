@@ -47,7 +47,7 @@
  
  @discussion Assigns the correct paths to `documentsDirectory` and `mainBundleDirectory`. Then it returns itself as the `TKMFileManager` object.
  
-```
+ ```
 	TKMFileManager *manager = [[TKMFileManager alloc] init];
  ```
  
@@ -62,7 +62,7 @@
  @discussion Creates a new directory at `newDirectoryPath`, if it doesn't already exist.
  
  ```
-	NSString *newDirectory = [manager.documentsDirectory stringByAppendingPathComponent:@"NewDirectory"]];  
+	NSString *newDirectory = [manager.documentsDirectory stringByAppendingPathComponent:@"NewDirectory"]];
 	[manager createDirectory:newDirectory];
  ```
  
@@ -80,7 +80,7 @@
  @discussion Creates a new directory at `subdirectoryName`, if it doesn't already exist.
  
  ```
-	NSString *subdirectory = @"/SubDirectory";  
+	NSString *subdirectory = @"/SubDirectory";
 	[manager createSubdirectory:subdirectory inDirectory:manager.documentsDirectory];
  ```
  
@@ -118,7 +118,7 @@
 /*!
  @brief Moves the contents of one directory into another.
  
- @discussion Moves the contents of `directoryPath` into `destinationDirectoryPath`.
+ @discussion Moves the contents of `directoryPath` into `destinationDirectoryPath`. <b>Note:</b> `directoryPath` is deleted as a result of this operation
  
  ```
 	[manager moveDirectory:manager.mainBundleDirectory toDirectory:mainBundleInDocuments];
@@ -194,7 +194,7 @@
  @discussion Copies a file with the path `filePath` to a directory with the path `directoryPath`. If `directoryPath` doesn't exist, it is created.
  
  ```
-	NSString *exampleFilePath = [manager.mainBundleDirectory stringByAppendingPathComponent:@"example.txt"];  
+	NSString *exampleFilePath = [manager.mainBundleDirectory stringByAppendingPathComponent:@"example.txt"];
 	[manager copyFile:exampleFilePath toDirectory:manager.documentsDirectory];
  ```
  
@@ -230,7 +230,7 @@
  @discussion Moves a file with the path `filePath` to a directory with the path `directoryPath`. If `directoryPath` doesn't exist, it is created.
  
  ```
-	NSString *exampleFilePath = [manager.mainBundleDirectory stringByAppendingPathComponent:@"example.txt"];  
+	NSString *exampleFilePath = [manager.mainBundleDirectory stringByAppendingPathComponent:@"example.txt"];
 	[manager moveFile:exampleFilePath toDirectory:manager.documentsDirectory];
  ```
  
@@ -266,7 +266,7 @@
  @discussion Deletes the file located at `filePath`.
  
  ```
-	NSString *exampleFilePath = [manager.mainBundleDirectory stringByAppendingPathComponent:@"example.txt"];  
+	NSString *exampleFilePath = [manager.mainBundleDirectory stringByAppendingPathComponent:@"example.txt"];
 	[manager deleteFile:exampleFilePath];
  ```
  
