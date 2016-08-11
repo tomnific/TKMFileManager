@@ -80,7 +80,7 @@ An easy to use file manager for iOS apps. Built with NSFileManager with the purp
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/TheTomMetzger/TKMFileManager.git" }
+  s.source       = { :git => "https://github.com/TheTomMetzger/TKMFileManager.git", :tag => "1.0" }
 # , :tag => "0.3" }
 
 
