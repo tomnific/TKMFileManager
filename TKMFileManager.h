@@ -314,9 +314,9 @@
 
 
 /*!
- @brief Sets the manager object into Debug Mode.
+ @brief Sets the TKMFileManager object into Debug Mode.
  
- @discussion Sets the manager into Debug Mode. This will print all `NSLog()` statements, instead of just the ones containing errors. By default, Debug Mode is off.
+ @discussion Sets the TKMFileManager object into Debug Mode. This will print all `NSLog()` statements, instead of just the ones containing errors. By default, Debug Mode is off.
  
  ```
 	[manager setDebugMode:YES];
