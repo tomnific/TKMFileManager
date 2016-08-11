@@ -10,11 +10,16 @@
 
 
 
+#define DEV_DEBUG_MODE NO
+
+
+
 
 
 @implementation TKMFileManager
 {
 	NSArray *paths;
+	BOOL debugMode;
 }
 
 
@@ -22,6 +27,9 @@
 
 - (id)init
 {
+	debugMode = false;
+	
+	
 	paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	_documentsDirectory = [paths objectAtIndex:0];
 	
@@ -43,7 +51,17 @@
 	
 	if (![[NSFileManager defaultManager] fileExistsAtPath:newDirectoryPath])
 	{
+		#if DEV_DEBUG_MODE
 		NSLog(@"Creating Directory: '%@'", newDirectoryPath);
+		#endif
+		
+		#if !DEV_DEBUG_MODE
+		if (debugMode)
+		{
+			NSLog(@"Creating Directory: '%@'", newDirectoryPath);
+		}
+		#endif
+		
 		[[NSFileManager defaultManager] createDirectoryAtPath:newDirectoryPath withIntermediateDirectories:NO attributes:nil error:&error];
 	}
 	else
@@ -75,7 +93,17 @@
 	
 	if (![[NSFileManager defaultManager] fileExistsAtPath:newDirectoryPath])
 	{
+		#if Dev_DEBUG_MODE
 		NSLog(@"Creating Directory: '%@'", newDirectoryPath);
+		#endif
+		
+		#if !DEV_DEBUG_MODE
+		if (debugMode)
+		{
+			NSLog(@"Creating Directory: '%@'", newDirectoryPath);
+		}
+		#endif
+		
 		[[NSFileManager defaultManager] createDirectoryAtPath:newDirectoryPath withIntermediateDirectories:NO attributes:nil error:&error];
 	}
 	else
@@ -96,33 +124,19 @@
 	
 	
 	
-//	if ([[NSFileManager defaultManager] fileExistsAtPath:destinationDirectoryPath])
-//	{
-//		[[NSFileManager defaultManager] removeItemAtPath:destinationDirectoryPath error:&error];
-//	}
-	
-	
+	#if DEV_DEBUG_MODE
 	NSLog(@"Copying Contents Of Directory: '%@'\nTo Directory: '%@'", directoryPath, destinationDirectoryPath);
+	#endif
+	
+	#if !DEV_DEBUG_MODE
+	if (debugMode)
+	{
+		NSLog(@"Copying Contents Of Directory: '%@'\nTo Directory: '%@'", directoryPath, destinationDirectoryPath);
+	}
+	#endif
 	
 	if ([files count] > 0)
 	{
-		/*for (int i = 0; i < [files count]; i++)
-		 {
-			NSString *filePath = [directoryPath stringByAppendingString:[@"/" stringByAppendingString:files[i]]];
-			NSString *newPathForFile = [destinationDirectoryPath stringByAppendingString:[@"/" stringByAppendingString:files[i]]];
-			
-			if (![[NSFileManager defaultManager] fileExistsAtPath:newPathForFile])
-			{
-		 NSLog(@"Copying File: '%@' \nTo Directory: '%@'", filePath, destinationDirectoryPath);
-		 [[NSFileManager defaultManager] copyItemAtPath:filePath toPath:newPathForFile error:&error];
-			}
-			else
-			{
-		 NSLog(@"ERROR: Could Not Copy File: '%@'\nTo Directory: '%@'", filePath, destinationDirectoryPath);
-		 NSLog(@"    RESULTING ERROR: %@", [error localizedDescription]);
-			}
-		 }*/
-		
 		NSError *copyError = nil;
 		if (![[NSFileManager defaultManager] copyItemAtPath:directoryPath toPath:destinationDirectoryPath error:&copyError])
 		{
@@ -152,27 +166,19 @@
 	}
 	
 	
+	#if DEV_DEBUG_MODE
 	NSLog(@"Moving Contents Of Directory: '%@'\nTo Directory: '%@'", directoryPath, destinationDirectoryPath);
+	#endif
+	
+	#if !DEV_DEBUG_MODE
+	if (debugMode)
+	{
+		NSLog(@"Moving Contents Of Directory: '%@'\nTo Directory: '%@'", directoryPath, destinationDirectoryPath);
+	}
+	#endif
 	
 	if ([files count] > 0)
 	{
-		/*for (int i = 0; i < [files count]; i++)
-		 {
-			NSString *filePath = [directoryPath stringByAppendingString:[@"/" stringByAppendingString:files[i]]];
-			NSString *newPathForFile = [destinationDirectoryPath stringByAppendingString:[@"/" stringByAppendingString:files[i]]];
-			
-			if (![[NSFileManager defaultManager] fileExistsAtPath:newPathForFile])
-			{
-		 NSLog(@"Copying File: '%@' \nTo Directory: '%@'", filePath, destinationDirectoryPath);
-		 [[NSFileManager defaultManager] copyItemAtPath:filePath toPath:newPathForFile error:&error];
-			}
-			else
-			{
-		 NSLog(@"ERROR: Could Not Copy File: '%@'\nTo Directory: '%@'", filePath, destinationDirectoryPath);
-		 NSLog(@"    RESULTING ERROR: %@", [error localizedDescription]);
-			}
-		 }*/
-		
 		NSError *copyError = nil;
 		if (![[NSFileManager defaultManager] moveItemAtPath:directoryPath toPath:destinationDirectoryPath error:&copyError])
 		{
@@ -188,10 +194,52 @@
 
 
 
+- (void)renameDirectory:(NSString *)directoryPath toName:(NSString *)newName
+{
+	NSString *pathOfNewName;
+	
+	
+	
+	if (![newName hasPrefix:@"/"])
+	{
+		pathOfNewName = [[directoryPath stringByDeletingLastPathComponent] stringByAppendingPathComponent:newName];
+	}
+	else
+	{
+		pathOfNewName = [[directoryPath stringByDeletingLastPathComponent] stringByAppendingString:newName];
+	}
+	
+	
+	#if DEV_DEBUG_MODE
+	NSLog(@"Renaming Directory '%@' to '%@'", directoryPath, pathOfNewName);
+	#endif
+	
+	#if !DEV_DEBUG_MODE
+	if (debugMode)
+	{
+		NSLog(@"Renaming Directory '%@' to '%@'", directoryPath, pathOfNewName);
+	}
+	#endif
+	
+	[self createDirectory:pathOfNewName];
+	[self moveDirectory:directoryPath toDirectory:pathOfNewName];
+}
+
+
+
 
 - (void)deleteDirectory:(NSString *)directoryPath
 {
+	#if DEV_DEBUG_MODE
 	NSLog(@"Deleting Directory: '%@'", directoryPath);
+	#endif
+	
+	#if !DEV_DEBUG_MODE
+	if (debugMode)
+	{
+		NSLog(@"Deleting Directory: '%@'", directoryPath);
+	}
+	#endif
 	
 	if ([[NSFileManager defaultManager] fileExistsAtPath:directoryPath ])
 	{
@@ -224,7 +272,16 @@
 										 }];
 	
 	
+	#if DEV_DEBUG_MODE
 	NSLog(@"Retrieving File: '%@'\nFrom Directory: '%@'", filename, directoryPath);
+	#endif
+	
+	#if !DEV_DEBUG_MODE
+	if (debugMode)
+	{
+		NSLog(@"Retrieving File: '%@'\nFrom Directory: '%@'", filename, directoryPath);
+	}
+	#endif
 	
 	for (NSURL *url in enumerator)
 	{
@@ -291,7 +348,16 @@
 												   }];
 	
 	
+	#if DEV_DEBUG_MODE
 	NSLog(@"Searching Documents Directory For File: '%@'", filename);
+	#endif
+	
+	#if !DEV_DEBUG_MODE
+	if (debugMode)
+	{
+		NSLog(@"Searching Documents Directory For File: '%@'", filename);
+	}
+	#endif
 	
 	for (NSURL *url in documentsEnumerator)
 	{
@@ -312,7 +378,16 @@
 	}
 	
 	
+	#if DEV_DEBUG_MODE
 	NSLog(@"Searching Main Bundle For File: '%@'", filename);
+	#endif
+	
+	#if !DEV_DEBUG_MODE
+	if (debugMode)
+	{
+		NSLog(@"Searching Main Bundle For File: '%@'", filename);
+	}
+	#endif
 	
 	for (NSURL *url in mainBundleEnumerator)
 	{
@@ -350,7 +425,16 @@
 
 - (void)copyFile:(NSString *)filePath toDirectory:(NSString *)destinationDirectoryPath
 {
+	#if DEV_DEBUG_MODE
 	NSLog(@"Copying File: '%@'\nTo Directory: '%@'", filePath, destinationDirectoryPath);
+	#endif
+	
+	#if !DEV_DEBUG_MODE
+	if (debugMode)
+	{
+		NSLog(@"Copying File: '%@'\nTo Directory: '%@'", filePath, destinationDirectoryPath);
+	}
+	#endif
 	
 	if (![[NSFileManager defaultManager] fileExistsAtPath:destinationDirectoryPath])
 	{
@@ -375,7 +459,16 @@
 	
 	
 	
+	#if DEV_DEBUG_MODE
 	NSLog(@"Copying File: '%@'\nTo Directory: '%@'", pathOfFile, destinationDirectoryPath);
+	#endif
+	
+	#if !DEV_DEBUG_MODE
+	if (debugMode)
+	{
+		NSLog(@"Copying File: '%@'\nTo Directory: '%@'", pathOfFile, destinationDirectoryPath);
+	}
+	#endif
 	
 	if (![[NSFileManager defaultManager] fileExistsAtPath:destinationDirectoryPath])
 	{
@@ -397,7 +490,16 @@
 
 - (void)moveFile:(NSString *)filePath toDirectory:(NSString *)destinationDirectoryPath
 {
+	#if DEV_DEBUG_MODE
 	NSLog(@"Moving File: '%@'\nTo Directory: '%@'", filePath, destinationDirectoryPath);
+	#endif
+	
+	#if !DEV_DEBUG_MODE
+	if (debugMode)
+	{
+		NSLog(@"Moving File: '%@'\nTo Directory: '%@'", filePath, destinationDirectoryPath);
+	}
+	#endif
 	
 	if (![[NSFileManager defaultManager] fileExistsAtPath:destinationDirectoryPath])
 	{
@@ -423,7 +525,16 @@
 	
 	
 	
+	#if DEV_DEBUG_MODE
 	NSLog(@"Moving File: '%@'\nTo Directory: '%@'", pathOfFile, destinationDirectoryPath);
+	#endif
+	
+	#if !DEV_DEBUG_MODE
+	if (debugMode)
+	{
+		NSLog(@"Moving File: '%@'\nTo Directory: '%@'", pathOfFile, destinationDirectoryPath);
+	}
+	#endif
 	
 	if (![[NSFileManager defaultManager] fileExistsAtPath:destinationDirectoryPath])
 	{
@@ -445,7 +556,16 @@
 
 - (void)deleteFile:(NSString *)filePath
 {
+	#if DEV_DEBUG_MODE
 	NSLog(@"Deleting File: '%@'", filePath);
+	#endif
+	
+	#if !DEV_DEBUG_MODE
+	if (debugMode)
+	{
+		NSLog(@"Deleting File: '%@'", filePath);
+	}
+	#endif
 	
 	if ([[NSFileManager defaultManager] fileExistsAtPath:filePath])
 	{
@@ -466,7 +586,16 @@
 	
 	
 	
+	#if DEV_DEBUG_MODE
 	NSLog(@"Deleting File: '%@'", pathOfFile);
+	#endif
+	
+	#if !DEV_DEBUG_MODE
+	if (debugMode)
+	{
+		NSLog(@"Deleting File: '%@'", pathOfFile);
+	}
+	#endif
 	
 	if ([[NSFileManager defaultManager] fileExistsAtPath:pathOfFile])
 	{
@@ -477,6 +606,14 @@
 		NSLog(@"ERROR: No File To Delete");
 	}
 	
+}
+
+
+
+
+- (void)setDebugMode:(BOOL *)debug
+{
+	debugMode = debug;
 }
 
 @end

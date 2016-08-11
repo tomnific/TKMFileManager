@@ -14,7 +14,7 @@
  
  @author Tom Metzger
  @copyright  2015 Tom Metzger
- @version    0.2
+ @version    1.0
  */
 
 #import <Foundation/Foundation.h>
@@ -38,7 +38,6 @@
 @property (readonly, nonatomic) NSString *documentsDirectory;
 /*! @brief This readonly property holds the string path of the directory of the app's Main Bundle. */
 @property (readonly, nonatomic) NSString *mainBundleDirectory;
-
 
 
 
@@ -133,6 +132,27 @@
  @return void - there isn't anything to return.
  */
 - (void)moveDirectory:(NSString *)directoryPath toDirectory:(NSString *)destinationDirectoryPath;
+
+
+/*!
+ @brief Renames the directory located at `directoryPath` to `newName`.
+ 
+ @discussion Under the hood, what this really does is creates a new directory at the same level as `directoryPath` with the name of `newName`, then moves the contents of `directoryPath` to `newName`'s directory.
+ 
+ ```
+	NSString *directoryToRename = [manager.documentsDirectory stringByAppendingPathComponent:@"/SubDirectory"];
+	[manager renameDirectory:directoryToRename toDirectory:@"RenamedDirectory"];
+ ```
+ 
+ @warning Do not attempt to use this method to rename files
+ 
+ @param directoryPath The path of the directory you'd like to rename.
+ 
+ @param newName The new name you'd like to give the directory.
+ 
+ @return void - there isn't anything to return.
+ */
+- (void)renameDirectory:(NSString *)directoryPath toName:(NSString *)newName;
 
 
 /*!
@@ -290,5 +310,22 @@
  @return void - there isn't anything to return.
  */
 - (void)findAndDeleteFile:(NSString *)filename;
+
+
+
+/*!
+ @brief Sets the manager object into Debug Mode.
+ 
+ @discussion Sets the manager into Debug Mode. This will print all `NSLog()` statements, instead of just the ones containing errors. By default, Debug Mode is off.
+ 
+ ```
+	[manager setDebugMode:YES];
+ ```
+ 
+ @param debug A Boolean that if YES sets Debug Mode on, if NO sets Debug Mode off
+ 
+ @return void - there isn't anything to return.
+ */
+- (void)setDebugMode:(BOOL *)debug;
 
 @end

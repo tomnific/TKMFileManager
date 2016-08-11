@@ -29,6 +29,8 @@
 	
 	/*
 	 * SECTION 1: The Basics
+	 *    Note: The results will vary slightly based on if it is the initial intall/run of the app or not, as the file changes stay after the app finishes running 
+	 *          (i.e. there will be no need to copy 'example2.txt' into the documents directory, as it is already there after the first run)
 	 */
 	//Creates a new TKMFileManager object.
 	TKMFileManager *manager = [[TKMFileManager alloc] init];
@@ -61,7 +63,10 @@
 	//Now that we've found the example file, lets move it over to a new location. Since we're moving a file and not a directory, the directory its located in remains in tact. Note that we are also creating a new directory by doing this
 	[manager moveFile:exampleFilePath toDirectory:[manager.documentsDirectory stringByAppendingPathComponent:@"ExampleTextFile"]];
 	
+	//Actually, I don't like the directory name 'ExampleTextFile'. Lets rename it to something fitting for all example files, like 'ExampleFiles'
+	[manager renameDirectory:[manager.documentsDirectory stringByAppendingPathComponent:@"ExampleTextFile"] toName:@"ExampleFiles"];
 	
+
 	/*
 	 * SECTION 3: The Adanced Stuff
 	 */
@@ -71,9 +76,10 @@
 	//We don't really need that file anymore, lets get rid of it.
 	[manager findAndDeleteFile:@"example.txt"];
 	
-	//In fact, we don't need those 'ExampleTextFile' directories either
-	[manager deleteDirectory:[manager.documentsDirectory stringByAppendingPathComponent:@"ExampleTextFile"]];
+	//In fact, we don't need the any of the subdirectoryies in the Documents Directory
+	[manager deleteDirectory:[manager.documentsDirectory stringByAppendingPathComponent:@"SampleNewDirectory"]];
 	[manager deleteDirectory:[manager.documentsDirectory stringByAppendingPathComponent:@"ExampleTextFile2"]];
+	[manager deleteDirectory:[manager.documentsDirectory stringByAppendingPathComponent:@"ExampleFiles"]];
 	
 	//Now that we've cleaned all that up, lets copy 'example2.txt'. Wait, where is it? Documents or Main Bundle? Luckily, we can find and copy in one step too!
 	[manager findAndCopyFile:@"example2.txt" toDirectory:manager.documentsDirectory];
@@ -85,11 +91,6 @@
 	// That's All Folks! Now you're and expert with managing files with TKMFileManager.
 	// Not all of the available methods were shown off here, but this should be enough for you to understand how this thing works.
 	// More methods are being added, but for now, you should be able to perform any operation you may need with a combination of operations here
-		//For example, you'll notice there isn't a 'renameDirectory' in this version. To be perfectly honest, I forgot to write it, but it will be in the next version. For now, here's how you can rename a directory using the avaible functions:
-			//[manager createDirectory:@"PathOfTheNameYouWantToGiveTheDirectoryYouAreRenaming"];
-			//[manager moveDirectory:@"PathOfDirectoryToRename" toDirectory:@"PathOfTheNameYouWantToGiveTheDirectoryYouAreRenaming"];
-		//That's it! Its exactly the same as renaming a directory.
-		//Renaming directories will be available in the next version, so hold tight!
 	//If you have an operation you'd like to be added, you can contact me on Twitter: @TheTomMetzger, or you can email me: tom@southernerd.us
 	//Thanks for using TKMFileManager! Happy Managing!
 }
