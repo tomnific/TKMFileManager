@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "TKMFileManager"
-  s.version      = "0.3"
+  s.version      = "0.3a1"
   s.summary      = "An easy to use file manager for iOS apps."
 
   # This description is used to generate tags and improve search results.
@@ -80,7 +80,8 @@ An easy to use file manager for iOS apps. Built with NSFileManager with the purp
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/TheTomMetzger/TKMFileManager.git", :tag => "#0.2" }
+  s.source       = { :git => "https://github.com/TheTomMetzger/TKMFileManager.git" }
+# , :tag => "0.3" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
