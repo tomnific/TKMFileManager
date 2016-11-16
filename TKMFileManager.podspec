@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "TKMFileManager"
-  s.version      = "1.0"
+  s.version      = "1.0.1"
   s.summary      = "An easy to use file manager for iOS apps."
 
   # This description is used to generate tags and improve search results.
@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
 An easy to use file manager for iOS apps. Built with NSFileManager with the purpose of making simple operations exactly what they should be - simple, one line commands.
                    DESC
 
-  s.homepage     = "https://www.tkm.southernerd.us/filemanager"
+  s.homepage     = "http://www.tkm.southernerd.us/projects/tkmfilemanager/"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -53,10 +53,10 @@ An easy to use file manager for iOS apps. Built with NSFileManager with the purp
   #  profile URL.
   #
 
-  s.author             = { "Tom Metzger" => "tom@southernerd,us" }
+  s.author             = { "Tom Metzger" => "tom@southernerd.us" }
   # Or just: s.author    = "Tom Metzger"
-  # s.authors            = { "Tom Metzger" => "thebutcherapps@gmail.com" }
-  # s.social_media_url   = "http://twitter.com/Tom Metzger"
+  # s.authors            = { "Tom Metzger" => "tom@southernerd.us" }
+  # s.social_media_url   = "http://twitter.com/TheTomMetzger"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
