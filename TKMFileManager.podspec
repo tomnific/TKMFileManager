@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "TKMFileManager"
-  s.version      = "1.0.1"
+  s.version      = "1.0.2"
   s.summary      = "An easy to use file manager for iOS apps."
 
   # This description is used to generate tags and improve search results.
