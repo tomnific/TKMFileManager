@@ -21,7 +21,7 @@ TKMFileManager *manager = [[TKMFileManager alloc] init];
 
 Sure, almost anyone could write something like this, but why bother when its already written for you - for free!
 
-Plus, this is the only file manager on GitHub with [Appldoc](https://github.com/tomaz/appledoc) style documentation, which can be found [here](http://www.tkm.southernerd.us/tkmfilemanager/docs)
+Plus, this is the only file manager on GitHub with [Appldoc](https://github.com/tomaz/appledoc) style documentation, which can be found [here](http://www.tkm.southernerd.us/projects/tkmfilemanager/docs/)
 
 
 
