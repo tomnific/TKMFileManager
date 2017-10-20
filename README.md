@@ -29,13 +29,13 @@ Plus, this is the only file manager on GitHub with [Appldoc](https://github.com/
 * Built with NSFileManager, using all the methods you'd probably be using already <br>
 * Smart file & directory searching - Don't know the exact path of a file or directory? Let TKMFileManager find it for you! (***Exclusive!***)<br>
 * Copy file / directory to directory <br>
-   * + Find & Copy (***Exclusive!***)
+   * &#43; Find & Copy (***Exclusive!***)
 * Move file / directory to directory <br>
-   * + Find & Move (***Exclusive!***)
+   * &#43; Find & Move (***Exclusive!***)
 * Delete file / directory <br>
-   * + Find & Delete (***Exclusive!***)
+   * &#43; Find & Delete (***Exclusive!***)
 * Retrieve NSData from file (***Coming Soon!***) <br>
-* Install via CocoaPods (***Coming Soon!***) <br>
+* Install via CocoaPods<br>
 
 
 
@@ -56,7 +56,11 @@ Plus, this is the only file manager on GitHub with [Appldoc](https://github.com/
 
 
 ### With CocoaPods
-***Coming Soon***
+Simply add the following to your `podfile`:
+```ruby
+pod 'TKMFileManager', '~> 1.0'
+```
+Then run a `pod install` inside your terminal, or from CocoaPods.app.
 
 
 
