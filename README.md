@@ -195,7 +195,7 @@ If you've got an awesome project that uses TKMFileManager, contact me (info belo
 
 
 
-##Contact 
+## Contact 
 Please report all bugs to the "Issues" page here on GitHub. 
 If you've got a cool project that uses TKMFileManager, need help figuring out how to use it (beyond what's provided in this guide), or you just want to say hi, you can contact me here: <br>
 
