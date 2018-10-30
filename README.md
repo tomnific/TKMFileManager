@@ -1,5 +1,7 @@
+> Rewrite Coming Soon.
+
 # TKMFileManager
-TKMFileManager is a simple tool to manage your iOS App's files, written in Objective-C (Swift coming soon). Instead of using NSFileManager and the lengthy amount of code needed for a simple operation, you can write it in just one line with TKMFileManager!
+TKMFileManager is a simple tool to manage your iOS App's files, written in Objective-C. Instead of using NSFileManager and the lengthy amount of code needed for a simple operation, you can write it in just one line with TKMFileManager!
 <br>To be perfectly honest, there's not much that is super special about it - except instead of writing this:
 
 ```Objective-C
