@@ -1,4 +1,4 @@
-> Rewrite Coming Soon.
+> The Rewrite Has Arrived: [TOMFileManager](https://github.com/tomnific/TOMFileManager).
 
 # TKMFileManager
 TKMFileManager is a simple tool to manage your iOS App's files, written in Objective-C. Instead of using NSFileManager and the lengthy amount of code needed for a simple operation, you can write it in just one line with TKMFileManager!
